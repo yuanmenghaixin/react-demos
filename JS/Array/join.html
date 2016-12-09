@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>join 方法 (Array)</h1>
+    <h2>arrayObj.join([separator]) </h2>
+    <div>
+        <h3>参数:</h3>
+        arrayObj必需。 一个 Array 对象。
+        separator
+        可选。 用于将在结果 String 中的数组的一个元素与下一个元素分开的字符串。 若忽略此参数，则数组元素之间用逗号分隔
+        <br>
+        <h3>备注:</h3>
+        如果数组的任一元素为 undefined 或 null，则该元素将被视为空字符串。
+        <br>
+        <br>
+        <br>
+    </div>
+<script>
+    var a, b;
+    a = new Array(0,1,2,3,4);
+    b = a.join("-");
+    document.write(b)
+</script>
+</body>
+</html>
