@@ -7,14 +7,17 @@
   </head>
   <body>
     <div id="example"></div>
+<!--
+    React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px 。
+    以下实例演示了为 h1 元素添加 myStyle 内联样式：
+-->
     <script type="text/babel">
+        var myStyle = {
+            fontSize: 20,
+            color: '#FF0880'
+        };
         ReactDOM.render(
-                <div>
-                  <h1>菜鸟教程</h1>
-                  <h2>欢迎学习 React</h2>
-                  <p data-myattribute = "somevalue">这是一个很不错的 JavaScript 库!</p>
-                </div>
-            ,
+                <h1 style = {myStyle}>菜鸟教程</h1>,
             document.getElementById('example')
         );
     </script>

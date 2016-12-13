@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+        /*Element
+         type参数 为ReactClass
+
+         我们看上面的例子，type参数为html标签名称。使用方法其实挺简单的，需要注意的是第二个参数和第三个参数。
+         下面我们来看一下type类型为ReactClass的使用方法。
+
+         在这里我们看第一个参数cli就是createClass的返回值。需要注意的是，对于前三个li的createElement第二个参数要加上key:’value’
+         这里的value彼此都不相同，如果不指定此属性——虽然也能按照逻辑正常显示——会报如下的警告
+
+         Warning: Each child in an array or iterator should have a unique "key" prop. Check the top-level render call using <ul>.
+          See https://fb.me/react-warning-keys for more information.。
+        */
+        var cli = React.createClass({
+            render:function(){
+                return (
+                        <li>
+                            {this.props.text}
+                        </li>
+                )
+            }
+        })
+        var child1 = React.createElement(cli, {key:'F',text:'First Text Content'});
+        var child2 = React.createElement(cli, {key:'S',text:'Second Text Content'});
+        var child3 = React.createElement(cli, {key:'T',text:'Third Text Content'});
+        var root = React.createElement('ul', { className: 'my-list' }, [child1, child2, child3]);
+        ReactDOM.render(
+            root,
+            document.getElementById('content')
+        );
+    </script>
+  </body>
+</html>
